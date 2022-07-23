@@ -1,5 +1,5 @@
 discord.py
 youtube-dl
 asyncio
-nacl
+pynacl
 ffmpeg
