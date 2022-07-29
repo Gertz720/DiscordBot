@@ -37,11 +37,9 @@ async def on_message(message):
       data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download = False))
 
       song = data['url']
-      duration = data['duration']
       player = discord.FFmpegPCMAudio(song, **ffmpeg_options)
 
       voice_clients[message.guild.id].play(player)
-      await message.channel.send(duration)
       
   
     except Exception as err:
